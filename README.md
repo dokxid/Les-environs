@@ -1,7 +1,6 @@
 # Les-environs
 
-Les environs (French for *The Surroundings*) is a live coding environment for p5.js, GLSL, and SuperCollider by
-Guillaume Pelletier-Auger.
+Les environs (French for *The Surroundings*) is a live coding environment for p5.js, GLSL, and SuperCollider by Guillaume Pelletier-Auger.
 
 this is a fork from the above named project by dokxid.
 
