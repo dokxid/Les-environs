@@ -5,6 +5,8 @@ let socket;
 let particles = [];
 
 function setup() {
+
+
     // socket.io allows the communication between the Web client
     // and the Node.js server.
     socket = io.connect('http://localhost:8080');

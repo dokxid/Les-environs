@@ -219,7 +219,7 @@ function init() {
     javaScriptEditor = new EditorClass();
     window.P5 = P5;
 
-    // socket = io.connect('http://localhost:8080');
+    // socket = connect('http://localhost:8080');
     socket.on('pushFiles', function(data) {
         if (typeof files === "undefined") {
             files = data;

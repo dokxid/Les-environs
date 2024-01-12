@@ -10,6 +10,7 @@ var htmlSources = {
     body: fs.readFileSync("html/body.html", { encoding: "utf8" }),
 };
 var selectedPath;
+const SC_PORT = 57110
 
 let sketchFolder, sketchName, sketchIndex;
 
@@ -230,7 +231,7 @@ var server = http.createServer(handleRequest);
 server.listen(8080);
 console.log('Server started on port 8080');
 
-var io = require('socket.io').listen(server);
+var io = require('socket.io')(server);
 
 var clients = {};
 
@@ -380,7 +381,7 @@ io.sockets.on('connection', function(socket) {
 
 
 function startSclang() {
-    sc.lang.boot({ stdin: false, echo: false, debug: false }).then(function(lang) {
+    sc.lang.boot({ stdin: false, echo: false, debug: false, sclang: "/Applications/SuperCollider.app/Contents/MacOS/sclang" }).then(function(lang) {
         sclang = lang;
         sclang.on('stdout', function(text) {
             io.sockets.emit('toscdconsole', text);
