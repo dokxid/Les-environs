@@ -22,6 +22,7 @@ Les environs works by opening a p5.js sketch and making it editable via live cod
 
 To set up the directories where Les environs will look for sketches, open the file `config.js` and put the desired folders into the `pathsToSketches` array. Les environs will look for sketches in that list of folders, in order, and will stop looking once it finds a match.
 
+<!-- todo: config changed, todo: node server bouncing-particles, seperate example folder and custom canvas folder -->
 To open a sketch, `cd` into the app repository and type `node server <sketchname>` For example, because the root folder of the app (`./`) is included in the `pathsToSketches` array by default, you can type `node server examples/bouncing-particles` to load the bouncing particles example that ships with the app.
 
 Once you’ve done that, the app now runs on a local server at port 8080. You can access it in any browser by visiting this URL: `http://localhost:8080/`.
