@@ -229,7 +229,7 @@ function handleRequest(req, res) {
 var server = http.createServer(handleRequest);
 // Listen on port 8080
 server.listen(8080);
-console.log('Server started on port 8080');
+console.log('Server started on port http://localhost:8080/');
 
 var io = require('socket.io')(server);
 
@@ -379,9 +379,15 @@ io.sockets.on('connection', function(socket) {
     });
 });
 
-
+// TODO: auto detect os
 function startSclang() {
-    sc.lang.boot({ stdin: false, echo: false, debug: false, sclang: "/Applications/SuperCollider.app/Contents/MacOS/sclang" }).then(function(lang) {
+    sc.lang.boot({ 
+        stdin: false, 
+        echo: false, 
+        debug: false, 
+        // sclang: "/Applications/SuperCollider.app/Contents/MacOS/sclang" 
+        sclang: "D:\\Program Files\\SuperCollider-3.13.0\\sclang.exe",
+    }).then(function(lang) {
         sclang = lang;
         sclang.on('stdout', function(text) {
             io.sockets.emit('toscdconsole', text);

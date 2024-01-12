@@ -131,11 +131,15 @@ function init() {
         }
     });
 
+    // TODO: auto detect os
     superColliderEditor.setOption("extraKeys", {
         'Cmd-Enter': function() { runsel(); },
+        'Ctrl-Enter': function() { runsel(); },
         'Cmd-.': function() { interpret('CmdPeriod.run;'); },
+        'Ctrl-.': function() { interpret('CmdPeriod.run;'); },
         // 'Cmd-Alt-/': "toggleComment",
         'Cmd-Alt-/': (cm) => cm.toggleComment({ indent: true }),
+        'Ctrl-Alt-/': (cm) => cm.toggleComment({ indent: true }),
         'Shift-Enter': function() { runLine(); },
         Tab: (cm) => cm.execCommand("indentMore"),
         "Shift-Tab": (cm) => cm.execCommand("indentLess"),
